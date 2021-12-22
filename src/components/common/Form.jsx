@@ -27,7 +27,7 @@ export class Form extends Component {
       abortEarly: false,
     });
     error &&
-      error.details.map((err) => {
+      error.details.forEach((err) => {
         errors[err.path[0]] = err.message;
       });
     return Object.keys(errors).length ? errors : null;
